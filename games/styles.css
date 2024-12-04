@@ -1,0 +1,175 @@
+*{
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+th{
+    border: 2px solid black ;
+}
+
+table{
+    border: 1px solid black
+}
+
+div.galary{
+    overflow: auto;
+    white-space: nowrap;
+    padding: 5px;
+}
+
+.galary img{
+    margin: 5px;
+    height: 250px;
+    border-radius: 5%;
+}
+
+div.game-title{
+    display: flex;
+    flex-wrap: wrap;
+    /* flex-direction: column; */
+}
+
+.game-title img, .title-info{
+   margin-right: 15px;
+   width: 60%; 
+}
+
+.game-title img{
+    border-radius: 25%;
+    width:100px;
+    height: 100px;
+    margin: 5px;
+}
+
+.seperator{
+    color: #017FA6;
+}
+
+.info-bar{
+    overflow: auto;
+    white-space: nowrap;
+    text-align: center;
+}
+
+.section{
+    padding:5px;
+    margin:5px;
+}
+
+.section h1{
+    border-left: 5px solid #017FA6;
+    padding: 5px;
+    margin: 5px;
+}
+
+
+.section p{
+    border-radius: 15px;
+    margin: 10px;
+    padding: 10px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+/*
+.reviews{
+    display: flex;
+    flex-wrap: wrap; 
+}
+
+    
+.bar-name{
+    width:20%;
+    }
+*/
+.total-star{
+    margin:15px;
+    padding:15px;
+    font-size: 50px;
+    text-align: center;
+}
+
+.main-bar{
+    background-color: rgb(200, 200, 200);
+    border-radius: 5px;
+    margin: 5px;
+    padding: 2px;
+    
+}
+
+.prog{
+    background-color:#017FA6 ;
+    /*height: 25px;*/
+    color: white;
+    padding: 2px;
+    border-radius: 5px;
+}
+
+
+.user-review{
+    display: flex;
+    flex-wrap: wrap;
+    margin: 5px;
+    padding: 5px;
+    margin-bottom: 0;
+}
+
+.user-review img{
+    width: 65px;
+    height: 65px;
+    border-radius: 50%;
+    margin: 5px;
+    padding: 5px;
+}
+
+.user-review p{
+    margin: 5px;
+    padding: 5px;
+}
+
+button.play-button{
+    padding: 5px;
+    margin: 5px;
+    border: #017FA6  solid 1px;
+    background-color: white;
+    color: black;
+    transition: color 0.3s ease-in-out;
+    width: 35%;
+}
+
+button.play-button:hover{
+    background-color: #017FA6 ;
+    color: white;
+}
+
+.suggestions{
+    overflow: auto;
+    white-space: nowrap;
+    display: flex;
+}
+
+.suggestion-card{
+    border: 2px solid black;
+    border-radius: 10px;
+    margin: 5px;
+    padding: 10px;
+    transition: transform 0.3s ease;
+    max-width: 150px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+
+.suggestion-card img{
+     width: 150px;
+     height: 150px;
+}
+
+.suggestion-card:hover{
+    box-shadow: 0px 0px 5px 3px rgba(0, 0, 0, 0.5);
+    transform: translateY(-5px);
+}
+
+.suggestion-card button{
+    width: 100%;
+}
+
