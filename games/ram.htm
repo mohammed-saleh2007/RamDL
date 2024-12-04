@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RAM Downloader</title>
+    <link rel="icon" type="image/x-icon" href="">
+    <link rel="stylesheet" href="../styles.css">
+
+    <!-- Open Graph meta tags for social media -->
+    <meta property="og:title" content="الالعالب المحميه للالعاب الترفيهيه">
+    <meta property="og:description" content="العاب ملحميييههههه">
+    <meta property="og:url" content="https://mohammed-saleh2007.github.io/ramdl/">
+
+    <!-- Twitter Card meta tags -->
+    <meta name="twitter:card" content="ابق قيمز">
+    <meta name="twitter:title" content="الالعالب الرامات للرامات الترفيهيه">
+    <meta name="twitter:description" content="المتجر الملحمي الرسمي للالعاب المحميه للراممات العربيه النصفكوكبيه">
+    <!-- Other meta tags for search engines -->
+    <meta name="الملحميه" content="الالعاب, الملحميه, شاريكات , الترفيهيه, ايبق, قيمز, احا, لينكس">
+    <meta name="sudo systranamic" content="Mohammed btw">
+</head>
+
+<body dir="rtl">
+    <div id="dark"></div>
+    <div class="top-bar">
+        <img src="./images/menu.png" alt="menu" onclick="menu_popup()" class="menu-img" id="menu-open">
+        <h1 class="big-title"> الرامات الكونيه </h1>
+    </div>
+    <br> <br> <br> <br> <br>
+    
+    
+  <h1 id="helio">Loading platform...</h1>
+
+<br> <br> <br> <br> <br>
+  <script>
+    // JavaScript to Detect Platform and Update h1 Content
+    function detectPlatform() {
+      let platform = navigator.platform; // Retrieves platform info
+      let userAgent = navigator.userAgent; // Retrieves user agent string
+
+      let detectedPlatform;
+
+      // Basic platform detection
+      if (/Android/i.test(userAgent)) {
+        detectedPlatform = "You are on an Android device! you can download 128gb of ram";
+      } else if (/iPhone|iPad|iPod/i.test(userAgent)) {
+        detectedPlatform = "You are on an iOS device! and we hate ios so govto hell يعني بالتوفيق ان شاء الله بابانجليزي";
+      } else if (/Win/i.test(platform)) {
+        detectedPlatform = "You are on a Windows PC! ششششخرص روح صطب لينكس وبطل صياح";
+      } else if (/Mac/i.test(platform)) {
+        detectedPlatform = "You are on a Mac! خد يسطا ملكش حاجه عمدي";
+      } else if (/Linux/i.test(platform)) {
+        detectedPlatform = "You are on a Linux device! عمي وعمك خد خش هنا سيssh root@segfault.netرفر سجفولت ";
+      } else {
+        detectedPlatform = "Unknown platform!";
+      }
+
+      // Set the detected platform into the h1 element
+      document.getElementById("helio").innerText = detectedPlatform;
+    }
+
+    // Call the function on page load
+    detectPlatform();
+  </script>
+
+    <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Progress Bar with Music</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      padding: 20px;
+    }
+
+    #progress-container {
+      margin: 20px auto;
+      width: 80%;
+      background-color: #f3f3f3;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      height: 30px;
+      position: relative;
+    }
+
+    #progress-bar {
+      height: 100%;
+      width: 0;
+      background-color: #4caf50;
+      border-radius: 5px;
+      text-align: center;
+      line-height: 30px;
+      color: white;
+      font-weight: bold;
+    }
+
+    #dl-button {
+      display: none; /* Initially hidden */
+      margin-top: 20px;
+      padding: 10px 20px;
+      background-color: #4caf50;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    #dl-button:hover {
+      background-color: #45a049;
+    }
+  </style>
+</head>
+<body>
+  <h1 id="dl">Starting soon...</h1>
+  <p id="message">Please be patient, everything is going fine...</p>
+
+  <div id="progress-container">
+    <div id="progress-bar">0%</div>
+  </div>
+
+  <button id="dl-button" onclick="redirect()">Download</button>
+
+  <!-- Add an audio element -->
+  <audio id="music" src="./lol.m4a" type="audio/mp4"></audio>
+
+  <script>
+    function startProcess() {
+      const h1Element = document.getElementById("dl");
+      const messageElement = document.getElementById("message");
+      const progressBar = document.getElementById("progress-bar");
+      const music = document.getElementById("music");
+      const dlButton = document.getElementById("dl-button");
+
+      let progress = 0; // Progress starts at 0%
+
+      // Update progress bar every second for 30 seconds
+      const interval = setInterval(() => {
+        progress += 3.33; // Increment progress (30 seconds / 100%)
+        progressBar.style.width = `${progress}%`;
+        progressBar.innerText = `${Math.floor(progress)}%`;
+
+        // Update motivational messages
+        if (progress < 50) {
+          messageElement.innerText = "Hang tight, things are running smoothly...";
+        } else if (progress < 90) {
+          messageElement.innerText = "Almost there! Just a little more patience...";
+        } else {
+          messageElement.innerText = "Finalizing the process, get ready!";
+        }
+
+        // Stop at 100%
+        if (progress >= 100) {
+          clearInterval(interval);
+          h1Element.innerText = "Process Complete!";
+          progressBar.innerText = "100%";
+          music.play(); // Play the music
+          dlButton.style.display = "inline-block"; // Show the download button
+        }
+      }, 300); // Update every 300ms for a smooth fill over 30 seconds
+    }
+
+    // Redirect to the download URL
+    function redirect() {
+      window.location.href = "https://www.youtube.com/watch?v=dQw4w9WgXcQ";
+    }
+
+    // Start the process on page load
+    window.onload = startProcess;
+  </script>
+</body>
+</html>
+
+
+
+<br> <br> <br> <br> <br>
+
+
+    <!--
+        <div class="game-card">
+            <h1 class="game-card-title"></h1>
+            <p>price: </p>
+            <img class="game-img" src="./images/" alt="">
+            <p></p>
+            <a href="#"><button class="play-button">Play The Game</button></a>
+        </div> 
+    -->
+
+    </div>
+
+
+    <h1 class="news-title" id="news">أجلتش<br> <br> <br> <br> <br></h1>
+
+    <div>
+        <div class="news">
+            <img src="./images/ass-cred.jpg" alt="حصن الحشاشسن" class="news-img">
+            <h1>الرام الغير محموح الام ي الاسواق</h1>
+            <p>سوف تدوس هنا لو انت دكر او وليه حته</p>
+            <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ">Press Hree</a>
+        </div>
+        <div class="news">
+            <img src="./images/db.jpg" alt="dragon ball" class="news-img">
+            <h1>كرات التنين الجزء الملين متوفرهق</h1>
+            <p>يعمل الفريق الياباني عملن بجد على صناعه الجزء رقم مليون من كرات التنين المشهوره وقريبن سوف تتوفر على متاجرنا الملينه ملحميه انتظروه ا
+                وهذه فقره العته وذلك لملء مكان المقال لغايه ما نلاقي كاتب مقالات بتلبنخملنمتلت
+                لتلناتبنلبتنلتبببببببببببببببببببببببببببببببببببببببببببببببببببببببببببببببببببببببببببببببببببببببببببلتنب
+                ل بتنبقابتلتلات لات ت   عهاعها ن هخر تىة ه هخه   لا لا ل  ل ي بل ب ل بقلقبلرتنيبى ى ثقلفعقهختلفقهثهقلتقهخع ه قعفق هخقعث فعقلفعثقه فعلثقهخفع خ فهخ\
+            هخ فهخاتف  ن بتبخالب            
+            </p>
+            <p>حسب رغبه : Ibrahim Eldweny</p>
+            <p>2/2/2024</p>
+        </div>
+
+    </div>
+
+    <div class="footer">
+        <img src="../images/logo.png" alt="epic games logo" width="5%">
+        <p>تحياتنا الملحميه الترفيهيه لكم :)</p>
+        <a href="index.htm">Home</a>
+        <a href="index.htm#games">Games</a>
+        <a href="index.htm#news">News</a>
+        <a href="#about">About</a>
+        <a href="https://github.com/mohammed-saleh2007/epic-games">GitHub</a>
+        <a href="https://www.facebook.com/profile.php?id=61554842859380">Facebook</a>
+        <a href="https://t.me/epicgamesdl">Download Server</a>
+        <a href="https://t.me/epicgameschatglobal">Global Chat</a>
+    </div>
+</body>
+
+<script>
+    function under_work_msg() {
+        alert("Under Construction")
+    }
+
+    function menu_popup(){
+        document.getElementById("menu").style.display = "block";
+        document.getElementById("dark").style.display = "block";
+        document.getElementById("menu-open").style.display = "none";
+    }
+
+    function menu_popup_close(){
+        document.getElementById("menu").style.display = "none";
+        document.getElementById("dark").style.display = "none";
+        document.getElementById("menu-open").style.display = "block";
+    }
+</script>
+
+</html>
